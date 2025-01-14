@@ -69,3 +69,21 @@ console.log('\n Segundo Exercício! \n\n');
 //  Ordene essa lista do menor para o maior.
 //  Retire o primeiro numero desta lista.
 //  Inverta toda ordem da sua lista por exemplo: [1,3,5,7,9] para [9,7,5,3,1]
+
+
+let list_a = [1, 3, 5, 7 , 0, 9];
+
+let result = list_a.reduce((accumulator, Nnumber, index, original) => {
+    let i = 0;
+    for(i = 0; i < list_a.length; i++){
+        if(list_a[index] > list_a[index + 1]){
+            let aux = [index + 1];
+            list_a[index + 1] = list_a[index];
+            list_a[index] = aux;
+        }
+    }
+    console.log(original + " - lista original!");
+})
+
+console.log(`\n\t ========================================= \n\n ${list_a} - lista enfileirada em ordem crescente! \n\n\t =========================================`);
+
