@@ -71,11 +71,48 @@ console.log('\n Segundo Exercício! \n\n');
 //  Inverta toda ordem da sua lista por exemplo: [1,3,5,7,9] para [9,7,5,3,1]
 
 
-let list_a = [1, 3, 5, 7 , 0, 9];
+let list_a = [1, 3, 5, 7 , 0, 9, -1, 10, -20, 5];
 
-list_a.map((item, index) => {
-    if()
-})
+console.log(list_a);
+
+let n = list_a.length;
+
+do{
+    for(i = 0; i < n; i++){ 
+        if(list_a[i] > list_a[i + 1]){
+            let aux = list_a[i + 1];
+            list_a[i + 1] = list_a[i];
+            list_a[i] = aux;
+        }
+    }
+    n--;
+}while(n != 0)
 
 console.log(`\n\t ========================================= \n\n ${list_a} - lista enfileirada em ordem crescente! \n\n\t =========================================`);
 
+
+//para remoção
+//início - shift
+//fim - pop
+
+//para inserção
+//início - push
+//fim - unshift
+
+console.log(`\n\nO elemento ${list_a[0]} será removido!`);
+list_a.shift();
+console.log(list_a);
+
+// trocando a ordem 
+console.log('==============================');
+let h = list_a.length;
+
+for(i = 0; i < h; i++){
+    let h_2 = h - 1;
+    aux = list_a[i];
+    list_a[i] = list_a[h_2];
+    list_a[h_2] = aux;
+    h_2--;
+}
+
+console.log(`\n\t ========================================= \n\n ${list_a} - lista reordenada! \n\n\t =========================================`);
